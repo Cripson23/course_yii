@@ -1,27 +1,23 @@
 <?php
 
-/** @var yii\web\View $this */
-/** @var string $name */
-/** @var string $message */
-/** @var Exception $exception */
-
 use yii\helpers\Html;
+
+/* @var $this yii\web\View */
+/* @var $name string */
+/* @var $message string */
+/* @var $exception Exception */
 
 $this->title = $name;
 ?>
-<div class="site-error">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="banner">
+    <?= $this->render('//layouts/inc/sidebar') ?>
+    <div class="w3l_banner_nav_right">
+        <h3><?= $name ?></h3>
 
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
+        <p>
+            <?= nl2br(Html::encode($message)) ?>
+        </p>
     </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
+    <div class="clearfix"></div>
 </div>

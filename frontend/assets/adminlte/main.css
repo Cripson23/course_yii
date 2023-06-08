@@ -1,0 +1,11 @@
+.has-error input {
+  border-color: red;
+}
+
+.help-block {
+  color: red;
+}
+
+.user-panel .logout {
+  padding: 5px 5px 5px 10px;
+}
