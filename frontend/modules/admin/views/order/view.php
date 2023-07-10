@@ -80,7 +80,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
                         </div>
                     </div>
-                <?php if ($idx % 2): ?>
+                <?php if ($idx % 2 || $idx == count($products)-1): ?>
                     </div>
                 <?php endif; ?>
                 <?php endforeach; ?>

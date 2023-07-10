@@ -14,39 +14,39 @@ $this->title = 'Products';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-index">
+    <div class="order-index">
+        <row>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <p>
+                            <?= Html::a('Добавить товар', ['create'], ['class' => 'btn btn-success']) ?>
+                        </p>
 
-    <h1><?= Html::encode($this->title) ?></h1>
+                    <?= GridView::widget([
+                        'dataProvider' => $dataProvider,
+                        'filterModel' => $searchModel,
+                        'columns' => [
+                            ['class' => 'yii\grid\SerialColumn'],
 
-    <p>
-        <?= Html::a('Create Product', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'category_id',
-            'title',
-            'content:ntext',
-            'price',
-            //'old_price',
-            //'description',
-            //'keywords',
-            //'img',
-            //'is_offer',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Product $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
-            ],
-        ],
-    ]); ?>
+                            'id',
+                            'category_id',
+                            'title',
+                            'content:ntext',
+                            'price',
+                            //'old_price',
+                            //'description',
+                            //'keywords',
+                            //'img',
+                            //'is_offer',
+                            [
+                                'class' => ActionColumn::className(),
+                                'urlCreator' => function ($action, Product $model, $key, $index, $column) {
+                                    return Url::toRoute([$action, 'id' => $model->id]);
+                                 }
+                            ],
+                        ],
+                    ]); ?>
 
 
 </div>
